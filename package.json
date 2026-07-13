@@ -1,0 +1,56 @@
+{
+  "name": "@mutualzz/rpc",
+  "version": "0.1.0",
+  "description": "Local IPC helper for Mutualzz desktop Rich Presence",
+  "author": "Mutualzz",
+  "license": "SEE LICENSE IN LICENSE",
+  "keywords": [
+    "mutualzz",
+    "rpc",
+    "presence",
+    "ipc",
+    "rich-presence"
+  ],
+  "homepage": "https://github.com/Mutualzz/mutualzz/tree/master/packages/rpc",
+  "bugs": {
+    "url": "https://github.com/Mutualzz/mutualzz/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mutualzz/mutualzz.git",
+    "directory": "packages/rpc"
+  },
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "pnpm typecheck && bunchee",
+    "dev": "bunchee --watch",
+    "prepublishOnly": "pnpm build",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.1",
+    "bunchee": "^6.10.0"
+  }
+}
