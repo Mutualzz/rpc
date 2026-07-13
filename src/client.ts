@@ -18,7 +18,6 @@ import {
 
 export type MutualzzRpcOptions = {
   clientId: string;
-  protocolVersion?: number;
   connectTimeoutMs?: number;
   path?: string;
 };
@@ -31,7 +30,6 @@ type PendingRequest = {
 
 export class MutualzzRpc extends EventEmitter {
   private readonly clientId: string;
-  private readonly protocolVersion: number;
   private readonly connectTimeoutMs: number;
   private readonly preferredPath: string | null;
 
@@ -48,7 +46,6 @@ export class MutualzzRpc extends EventEmitter {
     if (!clientId) throw new Error("clientId is required");
 
     this.clientId = clientId;
-    this.protocolVersion = options.protocolVersion ?? 1;
     this.connectTimeoutMs = options.connectTimeoutMs ?? 5_000;
     this.preferredPath = options.path?.trim() || null;
   }
@@ -211,7 +208,6 @@ export class MutualzzRpc extends EventEmitter {
       this.once("close", onClose);
 
       this.write(OPCODE_HANDSHAKE, {
-        v: this.protocolVersion,
         clientId: this.clientId,
       });
     });

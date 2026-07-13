@@ -14,21 +14,11 @@ npm install @mutualzz/rpc
 pnpm add @mutualzz/rpc
 ```
 
-Requires the Mutualzz desktop app to be running.
-
 From this monorepo:
 
 ```bash
 pnpm --filter @mutualzz/rpc build
 ```
-
-## Publish
-
-```bash
-pnpm --filter @mutualzz/rpc publish --access public
-```
-
-`prepublishOnly` builds `dist/` before publish.
 
 ## Quick start
 
@@ -59,12 +49,11 @@ Keep the process (and socket) alive while the activity should show. Disconnectin
 
 ## API
 
-### `new MutualzzRpc({ clientId, protocolVersion?, connectTimeoutMs?, path? })`
+### `new MutualzzRpc({ clientId, connectTimeoutMs?, path? })`
 
 | Option | Type | Description |
 |--------|------|-------------|
 | `clientId` | `string` | Required. Sent on handshake; used as `applicationId` for icons when it matches the Mutualzz game catalog |
-| `protocolVersion` | `number` | Default `1` |
 | `connectTimeoutMs` | `number` | Default `5000` |
 | `path` | `string` | Optional. Connect to a specific pipe/socket instead of scanning `0`–`9` |
 
@@ -110,53 +99,15 @@ The helper tries slots `0`–`9` automatically.
 
 ## Protocol
 
-Frames:
+See [PROTOCOL.md](https://github.com/Mutualzz/mutualzz/blob/master/packages/rpc/PROTOCOL.md) for the shared wire format used by all language wrappers.
 
-```
-[opcode: u32 LE][length: u32 LE][utf8 JSON]
-```
+## Other languages
 
-| Opcode | Meaning |
-|--------|---------|
-| `0` | Handshake |
-| `1` | Frame |
-| `2` | Close |
-| `3` / `4` | Ping / Pong |
-
-Handshake:
-
-```json
-{ "v": 1, "clientId": "your-app-id" }
-```
-
-Ready:
-
-```json
-{ "cmd": "READY", "data": { "v": 1 } }
-```
-
-Set activity:
-
-```json
-{
-  "cmd": "SET_ACTIVITY",
-  "nonce": "uuid",
-  "args": {
-    "pid": 12345,
-    "activity": {
-      "name": "My Game",
-      "details": "Ranked",
-      "state": "In a Match",
-      "type": "playing",
-      "timestamps": { "start": 1710000000000 }
-    }
-  }
-}
-```
-
-Clear with `"activity": null`.
-
-Low-level helpers (`encodeFrame`, `pipePath`, opcodes) are also exported.
+| Package | Language |
+|---------|----------|
+| [`packages/rpc`](https://github.com/Mutualzz/mutualzz/tree/master/packages/rpc) | Node.js (`@mutualzz/rpc`) |
+| [`packages/rpc-cpp`](https://github.com/Mutualzz/mutualzz/tree/master/packages/rpc-cpp) | C++ |
+| [`packages/rpc-csharp`](https://github.com/Mutualzz/mutualzz/tree/master/packages/rpc-csharp) | C# / .NET |
 
 ## Example CLI
 

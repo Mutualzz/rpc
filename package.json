@@ -1,6 +1,6 @@
 {
   "name": "@mutualzz/rpc",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Local IPC helper for Mutualzz desktop Rich Presence",
   "author": "Mutualzz",
   "license": "SEE LICENSE IN LICENSE",
@@ -34,7 +34,8 @@
   "files": [
     "dist",
     "LICENSE",
-    "README.md"
+    "README.md",
+    "PROTOCOL.md"
   ],
   "sideEffects": false,
   "engines": {

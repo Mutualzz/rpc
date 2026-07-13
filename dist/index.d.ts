@@ -7,16 +7,24 @@ declare const OPCODE_PING = 3;
 declare const OPCODE_PONG = 4;
 declare const MAX_IPC_SLOTS = 10;
 type RpcActivityType = "playing" | "listening";
+type RpcActivityAssets = {
+    largeImageUrl?: string;
+    largeText?: string;
+    smallImageUrl?: string;
+    smallText?: string;
+};
 type RpcActivity = {
     name: string;
     details?: string;
     state?: string;
     type?: RpcActivityType;
     applicationId?: string;
+    url?: string;
     timestamps?: {
         start?: number;
         end?: number;
     };
+    assets?: RpcActivityAssets;
 };
 type SetActivityArgs = {
     pid?: number;
@@ -40,13 +48,11 @@ declare class FrameReader {
 
 type MutualzzRpcOptions = {
     clientId: string;
-    protocolVersion?: number;
     connectTimeoutMs?: number;
     path?: string;
 };
 declare class MutualzzRpc extends EventEmitter {
     private readonly clientId;
-    private readonly protocolVersion;
     private readonly connectTimeoutMs;
     private readonly preferredPath;
     private socket;

@@ -63,7 +63,6 @@ class MutualzzRpc extends node_events.EventEmitter {
         const clientId = options.clientId?.trim();
         if (!clientId) throw new Error("clientId is required");
         this.clientId = clientId;
-        this.protocolVersion = options.protocolVersion ?? 1;
         this.connectTimeoutMs = options.connectTimeoutMs ?? 5_000;
         this.preferredPath = options.path?.trim() || null;
     }
@@ -196,7 +195,6 @@ class MutualzzRpc extends node_events.EventEmitter {
             this.once("error", onError);
             this.once("close", onClose);
             this.write(OPCODE_HANDSHAKE, {
-                v: this.protocolVersion,
                 clientId: this.clientId
             });
         });

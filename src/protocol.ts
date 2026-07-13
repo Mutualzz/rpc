@@ -8,16 +8,25 @@ export const MAX_IPC_SLOTS = 10;
 
 export type RpcActivityType = "playing" | "listening";
 
+export type RpcActivityAssets = {
+  largeImageUrl?: string;
+  largeText?: string;
+  smallImageUrl?: string;
+  smallText?: string;
+};
+
 export type RpcActivity = {
   name: string;
   details?: string;
   state?: string;
   type?: RpcActivityType;
   applicationId?: string;
+  url?: string;
   timestamps?: {
     start?: number;
     end?: number;
   };
+  assets?: RpcActivityAssets;
 };
 
 export type SetActivityArgs = {
