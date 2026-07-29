@@ -48,10 +48,13 @@
     "build": "pnpm typecheck && bunchee",
     "dev": "bunchee --watch",
     "prepublishOnly": "pnpm build",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src"
   },
   "devDependencies": {
+    "@mutualzz/eslint-config": "workspace:*",
     "@types/node": "^25.9.1",
-    "bunchee": "^6.10.0"
+    "bunchee": "^6.10.0",
+    "eslint": "^10.8.0"
   }
 }

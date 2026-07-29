@@ -8,14 +8,14 @@ export const MAX_IPC_SLOTS = 10;
 
 export type RpcActivityType = "playing" | "listening";
 
-export type RpcActivityAssets = {
+export interface RpcActivityAssets {
   largeImageUrl?: string;
   largeText?: string;
   smallImageUrl?: string;
   smallText?: string;
-};
+}
 
-export type RpcActivity = {
+export interface RpcActivity {
   name: string;
   details?: string;
   state?: string;
@@ -27,19 +27,19 @@ export type RpcActivity = {
     end?: number;
   };
   assets?: RpcActivityAssets;
-};
+}
 
-export type SetActivityArgs = {
+export interface SetActivityArgs {
   pid?: number;
   activity: RpcActivity | null;
-};
+}
 
-export type RpcFrame = {
+export interface RpcFrame {
   cmd?: string;
   nonce?: string;
   data?: unknown;
   args?: Record<string, unknown>;
-};
+}
 
 export function pipePath(slot: number): string {
   if (process.platform === "win32") {
@@ -59,9 +59,9 @@ export function encodeFrame(opcode: number, payload: object): Buffer {
 export class FrameReader {
   private buffer = Buffer.alloc(0);
 
-  push(chunk: Buffer): Array<{ opcode: number; message: unknown }> {
+  push(chunk: Buffer): { opcode: number; message: unknown }[] {
     this.buffer = Buffer.concat([this.buffer, chunk]);
-    const frames: Array<{ opcode: number; message: unknown }> = [];
+    const frames: { opcode: number; message: unknown }[] = [];
 
     while (this.buffer.length >= 8) {
       const opcode = this.buffer.readUInt32LE(0);

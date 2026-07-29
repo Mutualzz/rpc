@@ -16,17 +16,17 @@ import {
   type SetActivityArgs,
 } from "./protocol";
 
-export type MutualzzRpcOptions = {
+export interface MutualzzRpcOptions {
   clientId: string;
   connectTimeoutMs?: number;
   path?: string;
-};
+}
 
-type PendingRequest = {
+interface PendingRequest {
   resolve: (value: unknown) => void;
   reject: (error: Error) => void;
   timer: ReturnType<typeof setTimeout>;
-};
+}
 
 export class MutualzzRpc extends EventEmitter {
   private readonly clientId: string;
@@ -121,7 +121,9 @@ export class MutualzzRpc extends EventEmitter {
 
     try {
       socket.write(encodeFrame(OPCODE_CLOSE, {}));
-    } catch {}
+    } catch {
+      // ignore
+    }
 
     socket.destroy();
   }
