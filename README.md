@@ -1,4 +1,14 @@
-# `@mutualzz/rpc`
+<div align="center">
+
+# Mutualzz development moved to [git.mutualzz.com](https://git.mutualzz.com/mutualzz/mutualzz)
+
+**GitHub is a read-only mirror. Issues and pull requests opened on GitHub are not monitored.**
+
+Sign in with your GitHub account. No new password needed.
+
+</div>
+
+# `Mutualzz RPC`
 
 Node.js helper for Mutualzz desktop presence over local IPC.
 
@@ -51,11 +61,11 @@ Keep the process (and socket) alive while the activity should show. Disconnectin
 
 ### `new MutualzzRpc({ clientId, connectTimeoutMs?, path? })`
 
-| Option | Type | Description |
-|--------|------|-------------|
-| `clientId` | `string` | Required. Sent on handshake; used as `applicationId` for icons when it matches the Mutualzz game catalog |
-| `connectTimeoutMs` | `number` | Default `5000` |
-| `path` | `string` | Optional. Connect to a specific pipe/socket instead of scanning `0`–`9` |
+| Option             | Type     | Description                                                                                              |
+| ------------------ | -------- | -------------------------------------------------------------------------------------------------------- |
+| `clientId`         | `string` | Required. Sent on handshake; used as `applicationId` for icons when it matches the Mutualzz game catalog |
+| `connectTimeoutMs` | `number` | Default `5000`                                                                                           |
+| `path`             | `string` | Optional. Connect to a specific pipe/socket instead of scanning `0`–`9`                                  |
 
 ### `connect(): Promise<string>`
 
@@ -90,10 +100,10 @@ Closes the socket. Presence clears on the Mutualzz client.
 
 ## IPC endpoints
 
-| Platform | Paths |
-|----------|--------|
-| Windows | `\\.\pipe\mutualzz-ipc-0` … `mutualzz-ipc-9` |
-| Linux / macOS | `/tmp/mutualzz-ipc-0` … `mutualzz-ipc-9` |
+| Platform      | Paths                                        |
+| ------------- | -------------------------------------------- |
+| Windows       | `\\.\pipe\mutualzz-ipc-0` … `mutualzz-ipc-9` |
+| Linux / macOS | `/tmp/mutualzz-ipc-0` … `mutualzz-ipc-9`     |
 
 The helper tries slots `0`–`9` automatically.
 
@@ -103,11 +113,11 @@ See [PROTOCOL.md](https://github.com/Mutualzz/mutualzz/blob/master/packages/rpc/
 
 ## Other languages
 
-| Package | Language |
-|---------|----------|
-| [`packages/rpc`](https://github.com/Mutualzz/mutualzz/tree/master/packages/rpc) | Node.js (`@mutualzz/rpc`) |
-| [`packages/rpc-cpp`](https://github.com/Mutualzz/mutualzz/tree/master/packages/rpc-cpp) | C++ |
-| [`packages/rpc-csharp`](https://github.com/Mutualzz/mutualzz/tree/master/packages/rpc-csharp) | C# / .NET |
+| Package                                                                                       | Language                  |
+| --------------------------------------------------------------------------------------------- | ------------------------- |
+| [`packages/rpc`](https://github.com/Mutualzz/mutualzz/tree/master/packages/rpc)               | Node.js (`@mutualzz/rpc`) |
+| [`packages/rpc-cpp`](https://github.com/Mutualzz/mutualzz/tree/master/packages/rpc-cpp)       | C++                       |
+| [`packages/rpc-csharp`](https://github.com/Mutualzz/mutualzz/tree/master/packages/rpc-csharp) | C# / .NET                 |
 
 ## Example CLI
 
