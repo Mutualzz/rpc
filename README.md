@@ -1,6 +1,6 @@
 <div align="center">
 
-# Mutualzz development moved to [git.mutualzz.com](https://git.mutualzz.com/mutualzz/mutualzz)
+# Mutualzz is developed at [git.mutualzz.com](https://git.mutualzz.com/mutualzz/rpc)
 
 **GitHub is a read-only mirror. Issues and pull requests opened on GitHub are not monitored.**
 
@@ -109,15 +109,15 @@ The helper tries slots `0`–`9` automatically.
 
 ## Protocol
 
-See [PROTOCOL.md](https://git.mutualzz.com/mutualzz/mutualzz/blob/master/packages/rpc/PROTOCOL.md) for the shared wire format used by all language wrappers.
+See [PROTOCOL.md](https://git.mutualzz.com/mutualzz/rpc/src/branch/master/PROTOCOL.md) for the shared wire format used by all language wrappers.
 
 ## Other languages
 
-| Package                                                                                             | Language                  |
-| --------------------------------------------------------------------------------------------------- | ------------------------- |
-| [`packages/rpc`](https://git.mutualzz.com/mutualzz/mutualzz/tree/master/packages/rpc)               | Node.js (`@mutualzz/rpc`) |
-| [`packages/rpc-cpp`](https://git.mutualzz.com/mutualzz/mutualzz/tree/master/packages/rpc-cpp)       | C++                       |
-| [`packages/rpc-csharp`](https://git.mutualzz.com/mutualzz/mutualzz/tree/master/packages/rpc-csharp) | C# / .NET                 |
+| Package                                                      | Language                  |
+| ------------------------------------------------------------ | ------------------------- |
+| [`rpc`](https://git.mutualzz.com/mutualzz/rpc)               | Node.js (`@mutualzz/rpc`) |
+| [`rpc-cpp`](https://git.mutualzz.com/mutualzz/rpc-cpp)       | C++                       |
+| [`rpc-csharp`](https://git.mutualzz.com/mutualzz/rpc-csharp) | C# / .NET                 |
 
 ## Example CLI
 
