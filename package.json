@@ -11,13 +11,13 @@
     "ipc",
     "rich-presence"
   ],
-  "homepage": "https://github.com/Mutualzz/mutualzz/tree/master/packages/rpc",
+  "homepage": "https://git.mutualzz.com/mutualzz/mutualzz/tree/master/packages/rpc",
   "bugs": {
-    "url": "https://github.com/Mutualzz/mutualzz/issues"
+    "url": "https://git.mutualzz.com/mutualzz/mutualzz/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Mutualzz/mutualzz.git",
+    "url": "git+https://git.mutualzz.com/mutualzz/mutualzz.git",
     "directory": "packages/rpc"
   },
   "type": "module",

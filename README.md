@@ -109,15 +109,15 @@ The helper tries slots `0`–`9` automatically.
 
 ## Protocol
 
-See [PROTOCOL.md](https://github.com/Mutualzz/mutualzz/blob/master/packages/rpc/PROTOCOL.md) for the shared wire format used by all language wrappers.
+See [PROTOCOL.md](https://git.mutualzz.com/mutualzz/mutualzz/blob/master/packages/rpc/PROTOCOL.md) for the shared wire format used by all language wrappers.
 
 ## Other languages
 
-| Package                                                                                       | Language                  |
-| --------------------------------------------------------------------------------------------- | ------------------------- |
-| [`packages/rpc`](https://github.com/Mutualzz/mutualzz/tree/master/packages/rpc)               | Node.js (`@mutualzz/rpc`) |
-| [`packages/rpc-cpp`](https://github.com/Mutualzz/mutualzz/tree/master/packages/rpc-cpp)       | C++                       |
-| [`packages/rpc-csharp`](https://github.com/Mutualzz/mutualzz/tree/master/packages/rpc-csharp) | C# / .NET                 |
+| Package                                                                                             | Language                  |
+| --------------------------------------------------------------------------------------------------- | ------------------------- |
+| [`packages/rpc`](https://git.mutualzz.com/mutualzz/mutualzz/tree/master/packages/rpc)               | Node.js (`@mutualzz/rpc`) |
+| [`packages/rpc-cpp`](https://git.mutualzz.com/mutualzz/mutualzz/tree/master/packages/rpc-cpp)       | C++                       |
+| [`packages/rpc-csharp`](https://git.mutualzz.com/mutualzz/mutualzz/tree/master/packages/rpc-csharp) | C# / .NET                 |
 
 ## Example CLI
 
