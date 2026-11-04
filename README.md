@@ -30,6 +30,10 @@ From this monorepo:
 pnpm --filter @mutualzz/rpc build
 ```
 
+## Get an application ID
+
+In the Mutualzz app, open **Settings → Applications**, create an application, set its icon, and copy its ID. Use that ID as `clientId`. Your activity then shows the application's name and icon.
+
 ## Quick start
 
 ```ts
@@ -63,7 +67,7 @@ Keep the process (and socket) alive while the activity should show. Disconnectin
 
 | Option             | Type     | Description                                                                                              |
 | ------------------ | -------- | -------------------------------------------------------------------------------------------------------- |
-| `clientId`         | `string` | Required. Sent on handshake; used as `applicationId` for icons when it matches the Mutualzz game catalog |
+| `clientId`         | `string` | Required. Your application ID from **Settings → Applications**. Registered applications show their own name and icon |
 | `connectTimeoutMs` | `number` | Default `5000`                                                                                           |
 | `path`             | `string` | Optional. Connect to a specific pipe/socket instead of scanning `0`–`9`                                  |
 

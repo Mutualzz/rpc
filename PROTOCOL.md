@@ -50,6 +50,12 @@ Host replies opcode `1`:
 
 `clientId` becomes the activity `applicationId` when the activity does not set one.
 
+### Application IDs
+
+Create an application in the Mutualzz app under **Settings → Applications** and use its ID as `clientId`. The ID is public; no secret is involved.
+
+When the ID belongs to a registered application, its name and icon are shown and the activity `name` is ignored. Unregistered IDs still work and show the `name` you send.
+
 ## SET_ACTIVITY
 
 Client sends opcode `1`:
