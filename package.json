@@ -1,34 +1,22 @@
 {
-  "name": "@mutualzz/rpc",
-  "version": "1.0.0",
-  "description": "Local IPC helper for Mutualzz desktop Rich Presence",
   "author": "Mutualzz",
-  "license": "SEE LICENSE IN LICENSE",
-  "keywords": [
-    "mutualzz",
-    "rpc",
-    "presence",
-    "ipc",
-    "rich-presence"
-  ],
-  "homepage": "https://git.mutualzz.com/mutualzz/mutualzz/tree/master/packages/rpc",
   "bugs": {
     "url": "https://git.mutualzz.com/mutualzz/mutualzz/issues"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://git.mutualzz.com/mutualzz/mutualzz.git",
-    "directory": "packages/rpc"
+  "description": "Local IPC helper for Mutualzz desktop Rich Presence",
+  "devDependencies": {
+    "@types/node": "^25.9.1",
+    "bunchee": "^6.10.0",
+    "eslint": "^10.8.0"
   },
-  "type": "module",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
+  "engines": {
+    "node": ">=18"
+  },
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
     }
   },
   "files": [
@@ -37,24 +25,35 @@
     "README.md",
     "PROTOCOL.md"
   ],
-  "sideEffects": false,
-  "engines": {
-    "node": ">=18"
-  },
+  "homepage": "https://git.mutualzz.com/mutualzz/mutualzz/tree/master/packages/rpc",
+  "keywords": [
+    "mutualzz",
+    "rpc",
+    "presence",
+    "ipc",
+    "rich-presence"
+  ],
+  "license": "SEE LICENSE IN LICENSE",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "name": "@mutualzz/rpc",
   "publishConfig": {
     "access": "public"
+  },
+  "repository": {
+    "directory": "packages/rpc",
+    "type": "git",
+    "url": "git+https://git.mutualzz.com/mutualzz/mutualzz.git"
   },
   "scripts": {
     "build": "pnpm typecheck && bunchee",
     "dev": "bunchee --watch",
+    "lint": "eslint src",
     "prepublishOnly": "pnpm build",
-    "typecheck": "tsc --noEmit",
-    "lint": "eslint src"
+    "typecheck": "tsc --noEmit"
   },
-  "devDependencies": {
-    "@mutualzz/eslint-config": "workspace:*",
-    "@types/node": "^25.9.1",
-    "bunchee": "^6.10.0",
-    "eslint": "^10.8.0"
-  }
+  "sideEffects": false,
+  "type": "module",
+  "types": "./dist/index.d.ts",
+  "version": "1.0.0"
 }
