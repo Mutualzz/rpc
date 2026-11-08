@@ -40,11 +40,11 @@
   "publishConfig": {
     "access": "public"
   },
-"repository": {
-  "directory": "packages/rpc",
-  "type": "git",
-  "url": "https://github.com/Mutualzz/mutualzz"
-}
+  "repository": {
+    "directory": "packages/rpc",
+    "type": "git",
+    "url": "https://github.com/Mutualzz/mutualzz"
+  },
   "scripts": {
     "build": "pnpm typecheck && bunchee",
     "dev": "bunchee --watch",
